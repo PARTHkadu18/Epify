@@ -2,7 +2,7 @@
 import { useState, type ChangeEvent, type FormEvent } from "react"
 import Layout from "../components/Layout";
 import { Box, Button, TextField, Typography } from "@mui/material";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 
 const AddProduct = () => {
 
@@ -57,8 +57,9 @@ const AddProduct = () => {
             setQuantity(0);
             setPrice(0);
             setImage1(null);
-        } catch (error:any) {
-            alert(error.response?.data.message ?? error.message);
+        } catch (error) {
+            const e = error as AxiosError<{ message: string }>;
+            alert(e.response?.data.message ?? e.message);
         } finally {
             setSubmitting(false);
         }
