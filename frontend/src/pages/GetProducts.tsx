@@ -34,6 +34,7 @@ const GetProducts: React.FC = () => {
     setError("");
     try {
       const { data } = await axios.get("/api/products", {params: { page: pageToFetch, limit }});
+      console.log(data);
       setProducts(data.items);
       // update all pagination fields
       setPagination(data.pagination);
