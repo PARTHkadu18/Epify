@@ -1,12 +1,12 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import cors from 'cors'
-import connectDB from './config/db'
+import connectDB from './src/config/db'
 import cookieParser from 'cookie-parser'
-import connectCloudinary from './utils/cloudinary'
+import connectCloudinary from './src/utils/cloudinary'
 
-import userRoutes from './routes/userRoutes'
-import productRoutes from './routes/productRoutes'
+import userRoutes from './src/routes/userRoutes'
+import productRoutes from './src/routes/productRoutes'
 
 dotenv.config()
 connectDB();
