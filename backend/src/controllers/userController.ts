@@ -12,7 +12,7 @@ class UserController{
             const {user,token} = await this.userService.registerUser(req.body);
             const cookieOptions = {
                     httpOnly: true,
-                    secure: false,
+                    secure: true,
                     sameSite: "lax" as const,
                     maxAge: 50 * 60 * 1000, // e.g. 5 minutes
                 };
@@ -27,7 +27,7 @@ class UserController{
             const {user,token} = await this.userService.loginUser(req.body);
             const cookieOptions = {
                     httpOnly: true,
-                    secure: false,
+                    secure: true,
                     sameSite: "lax" as const,
                     maxAge: 50 * 60 * 1000, // e.g. 5 minutes
                 };
@@ -52,7 +52,7 @@ class UserController{
         
         const cookieOptions = {
             httpOnly: true,
-            secure: false,
+            secure: true,
             sameSite: "lax" as const,
             path:'/'
         };
