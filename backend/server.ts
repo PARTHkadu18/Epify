@@ -11,8 +11,8 @@ import productRoutes from './src/routes/productRoutes'
 dotenv.config()
 connectDB();
 connectCloudinary();
-
 const app = express()
+
 app.use(cors({ origin: process.env.FRONTENT_URI, credentials: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
