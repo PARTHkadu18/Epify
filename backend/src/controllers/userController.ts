@@ -13,8 +13,9 @@ class UserController{
             const cookieOptions = {
                     httpOnly: true,
                     secure: true,
-                    sameSite: "lax" as const,
-                    maxAge: 50 * 60 * 1000, // e.g. 5 minutes
+                    sameSite: "none" as const,
+                    maxAge: 50 * 60 * 1000, // e.g. 5 minutes,
+                    path: '/', 
                 };
             res.cookie("token",token, cookieOptions);
             res.status(201).json(user);
@@ -28,8 +29,9 @@ class UserController{
             const cookieOptions = {
                     httpOnly: true,
                     secure: true,
-                    sameSite: "lax" as const,
+                    sameSite: "none" as const,
                     maxAge: 50 * 60 * 1000, // e.g. 5 minutes
+                    path: '/'
                 };
             res.cookie("token",token, cookieOptions);
             res.status(201).json(user);
@@ -53,7 +55,7 @@ class UserController{
         const cookieOptions = {
             httpOnly: true,
             secure: true,
-            sameSite: "lax" as const,
+            sameSite: "none" as const,
             path:'/'
         };
         res.clearCookie("token", cookieOptions);
