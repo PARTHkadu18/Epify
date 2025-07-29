@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, type ChangeEvent, type FormEvent } from "react"
 import Layout from "../components/Layout";
 import { Box, Button, TextField, Typography } from "@mui/material";
